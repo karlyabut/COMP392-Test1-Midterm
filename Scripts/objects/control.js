@@ -4,11 +4,11 @@ var objects;
     // CONTROL CLASS ++++++++++++++++++++++++++++++++++++++++++
     var Control = (function () {
         // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        function Control() {
+        function Control(rotationY) {
+            this.rotationY = rotationY;
         }
         return Control;
-    }());
+    })();
     objects.Control = Control;
 })(objects || (objects = {}));
-
 //# sourceMappingURL=control.js.map

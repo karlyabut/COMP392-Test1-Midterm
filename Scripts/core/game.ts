@@ -56,7 +56,7 @@ var game = (() => {
 
     function init() {
         // Instantiate a new Scene object
-        //scene = new Scene();
+        scene = new Scene();
         
         setupRenderer(); // setup the default renderer
 	
@@ -77,6 +77,52 @@ var game = (() => {
         plane.position.z = 0;
 
         scene.add(plane);
+        console.log('added plane');
+        
+        cubeGeometry = new CubeGeometry(14,5,14);
+        cubeTower1 = new Mesh(cubeGeometry);
+        cubeTower1.castShadow = true;
+        
+        cubeTower1.position.x = 0;
+        cubeTower1.position.y = 2;
+        cubeTower1.position.z = 0;
+        scene.add(cubeTower1);
+        
+        cubeGeometry = new CubeGeometry(12,5,12);
+        cubeTower2 = new Mesh(cubeGeometry);
+        cubeTower2.castShadow = true;
+        
+        cubeTower2.position.x = 0;
+        cubeTower2.position.y = 8;
+        cubeTower2.position.z = 0;
+        scene.add(cubeTower2);
+        
+        cubeGeometry = new CubeGeometry(10,15,10);
+        cubeTower3 = new Mesh(cubeGeometry);
+        cubeTower3.castShadow = true;
+        
+        cubeTower3.position.x = 0;
+        cubeTower3.position.y = 15;
+        cubeTower3.position.z = 0;
+        scene.add(cubeTower3);
+        
+        cubeGeometry = new CubeGeometry(8,10,8);
+        cubeTower4 = new Mesh(cubeGeometry);
+        cubeTower4.castShadow = true;
+        
+        cubeTower4.position.x = 0;
+        cubeTower4.position.y = 25;
+        cubeTower4.position.z = 0;
+        scene.add(cubeTower4);
+        
+        cubeGeometry = new CubeGeometry(6,10,6);
+        cubeTower5 = new Mesh(cubeGeometry);
+        cubeTower5.castShadow = true;
+        
+        cubeTower5.position.x = 0;
+        cubeTower5.position.y = 35;
+        cubeTower5.position.z = 0;
+        scene.add(cubeTower5);
  
         // add controls
         gui = new GUI();
@@ -109,6 +155,8 @@ var game = (() => {
     function gameLoop(): void {
         stats.update();
         
+       
+        
         // render using requestAnimationFrame
         requestAnimationFrame(gameLoop);
 	
@@ -129,9 +177,9 @@ var game = (() => {
     // Setup main camera for the scene
     function setupCamera(): void {
         camera = new PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000);
-        camera.position.x = -30;
-        camera.position.y = 40;
-        camera.position.z = 30;
+        camera.position.x = -75;
+        camera.position.y = 75;
+        camera.position.z = 75;
         //camera.rotation.set(-1.10305, 0.49742, -0.1396);
         camera.lookAt(scene.position);
         console.log("Finished setting up Camera...");
